@@ -65,4 +65,22 @@ public class ConeCalculatorTest {
 
 		Assert.assertTrue(expected == actual, "cone height mismatch. Expected=" + expected + ", actual=" + actual);
 	}
+	
+	@Test(dataProvider = "conePoints")
+	public void calculateVolumeTest(String points) {
+		Cone cone = coneCreator.createCone(points);
+		double expected = 315.16;
+		double actual = coneCalculator.calculateVolume(cone);
+
+		Assert.assertTrue(expected == actual, "cone volume mismatch. Expected=" + expected + ", actual=" + actual);
+	}
+	
+	@Test(dataProvider = "conePoints")
+	public void calculateSpaceTest(String points) {
+		Cone cone = coneCreator.createCone(points);
+		double expected = 291.92;
+		double actual = coneCalculator.calculateSpace(cone);
+
+		Assert.assertTrue(expected == actual, "cone space mismatch. Expected=" + expected + ", actual=" + actual);
+	}
 }

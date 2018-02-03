@@ -12,6 +12,12 @@ import org.apache.log4j.Logger;
 
 import by.kurlovich.cone.exception.FileProblemException;
 
+/**
+ * read file with points for the shape
+ * @param 	fileName	file name with path. Must be a txt file.
+ * @return 				array of string lines.
+ */
+
 public class TextReader {
     private final static Logger LOGGER = Logger.getLogger(TextReader.class);
 
