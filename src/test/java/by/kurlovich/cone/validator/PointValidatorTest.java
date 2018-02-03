@@ -4,9 +4,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import static org.testng.AssertJUnit.assertFalse;
-import static org.testng.AssertJUnit.assertTrue;
+import org.testng.Assert;
 
 public class PointValidatorTest {
     PointValidator pointValidator;
@@ -41,7 +39,7 @@ public class PointValidatorTest {
         boolean expected = true;
         boolean actual = pointValidator.validatePoint(line);
 
-        assertTrue("non number found", expected == actual);
+        Assert.assertTrue(expected == actual, "non number found");
     }
 
     @Test(dataProvider = "badDataPoints")
@@ -49,7 +47,7 @@ public class PointValidatorTest {
         boolean expected = true;
         boolean actual = pointValidator.validatePoint(line);
 
-        assertFalse("no bad numbers found", expected == actual);
+        Assert.assertFalse(expected == actual, "no bad numbers found");
     }
 }
 

@@ -3,8 +3,7 @@ package by.kurlovich.cone.reader;
 import by.kurlovich.cone.exception.FileProblemException;
 import by.kurlovich.cone.reader.TextReader;
 import org.testng.annotations.*;
-
-import static org.testng.AssertJUnit.assertEquals;
+import org.testng.Assert;
 
 public class TextReaderTest {
     TextReader textReader;
@@ -28,7 +27,8 @@ public class TextReaderTest {
     public void readLinesTest() throws FileProblemException {
         int expected = 3;
         int actual = textReader.readFile("./files/points.txt").size();
-        assertEquals ("mismatch lines quantity" ,expected, actual);
+        
+        Assert.assertEquals (expected, actual, "mismatch lines quantity");
     }
 
 }
