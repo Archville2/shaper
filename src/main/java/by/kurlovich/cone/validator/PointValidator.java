@@ -1,9 +1,6 @@
 package by.kurlovich.cone.validator;
 
-import org.apache.log4j.Logger;
-
 public class PointValidator {
-    private static Logger logger = Logger.getLogger(PointValidator.class);
     private final String IS_NUMBER_REGEX = "^-?[0-9]\\d*(\\.\\d+)?$";
     private final static String DELIMITER = "\\s";
 
